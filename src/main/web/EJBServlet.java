@@ -22,7 +22,7 @@ public class EJBServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        final String dir = "/Users/a1/Desktop/Ягодкин";
+        final String dir = "/Users/a1/Desktop";
 
         Recursion path = new Recursion ( );
         File file = new File (dir);
@@ -30,6 +30,5 @@ public class EJBServlet extends HttpServlet {
 
         request.setAttribute ("files", recursion.pathToFolders (file));
         request.getRequestDispatcher ("/files.jsp").include (request, response);
-
     }
 }

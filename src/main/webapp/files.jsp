@@ -11,11 +11,11 @@
 <html>
 <body>
 <%
-    File[] fileList;
-    fileList = (File[]) request.getAttribute ("files");
+    List<String> fileList;
+    fileList = (List<String>) request.getAttribute ("files");
     if (fileList == null)
         return;
-    for (File file : fileList) {
+    for (String file : fileList) {
 %>
 <p><%=file%>
 </p>
