@@ -16,19 +16,19 @@ public class EJBServlet extends HttpServlet {
     }
 
     @EJB
-    PathToFolder pathToFolder;
+    Recursion recursion;
 
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String dir = "/Users/a1/Desktop/Ягодкин";
+        final String dir = "/Users/a1/Desktop/Ягодкин";
 
-        PathToFolder path = new PathToFolder ( );
+        Recursion path = new Recursion ( );
         File file = new File (dir);
         path.pathToFolders (file);
 
-        request.setAttribute ("files", pathToFolder.pathToFolders (file));
+        request.setAttribute ("files", recursion.pathToFolders (file));
         request.getRequestDispatcher ("/files.jsp").include (request, response);
 
     }

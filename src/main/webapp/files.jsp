@@ -1,4 +1,5 @@
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.io.File" %><%--
   Created by IntelliJ IDEA.
   User: a1
   Date: 24/11/2019
@@ -9,16 +10,17 @@
 
 <html>
 <body>
-    <%
-        List<String> fileList = (List<String>) request.getAttribute ("files");
-        if (fileList == null)
-            return;
-        for (String file : fileList) {
-    %>
-    <p><%=file%>
-    </p>
-    <%
-        }
-    %>
+<%
+    File[] fileList;
+    fileList = (File[]) request.getAttribute ("files");
+    if (fileList == null)
+        return;
+    for (File file : fileList) {
+%>
+<p><%=file%>
+</p>
+<%
+    }
+%>
 </body>
 </html>
