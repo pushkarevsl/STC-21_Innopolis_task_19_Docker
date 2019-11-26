@@ -24,9 +24,9 @@ public class EJBServlet extends HttpServlet {
 
         final String dir = "/Users/a1/Desktop";
 
-        Recursion path = new Recursion ( );
+
         File file = new File (dir);
-        path.pathToFolders (file);
+        recursion.pathToFolders (file);
 
         request.setAttribute ("files", recursion.pathToFolders (file));
         request.getRequestDispatcher ("/files.jsp").include (request, response);
